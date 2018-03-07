@@ -1,1 +1,15 @@
 @import "ember-bootstrap/bootstrap";
+
+button {
+  margin-top: 15px;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.form-control:focus{
+  border-color: #cccccc;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
