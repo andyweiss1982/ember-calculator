@@ -74,16 +74,18 @@
 <div class="col-xs-12 col-sm-6 col-lg-8 col-xl-9">
   <div class="panel panel-default">
     <div class="panel-body">
-      <h3>Current Expression</h3>
+      <h3>Current Calculation</h3>
       <input class="form-control" readonly value={{calculations.currentCalculation}}>
-      {{#if calculations.pastCalculations.length}}
-        <h4>Past Calculations</h4>
-        <ul>
-          {{#each of calculations.pastCalculations as |pastCalculation|}}
-            <li>{{pastCalculation}}</li>
-          {{/each}}
-        </ul>
-      {{/if}}
+      <h3>Past Calculations</h3>
+      <ul>
+        {{#each calculations.pastCalculations as |pastCalculation|}}
+          <li>{{pastCalculation}}</li>
+        {{/each}}
+      </ul>
+
+
+      <!-- {{#if calculations.pastCalculations.length}} -->
+      <!-- {{/if}} -->
     </div>
   </div>
 </div>

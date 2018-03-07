@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { storageFor } from 'ember-local-storage';
+import mathjs from 'npm:mathjs';
 
 const operators = ["*", "+", "-", "/", "^"];
 
@@ -73,7 +74,20 @@ export default Controller.extend({
       this.set('calculations.currentCalculation', '');
     },
     calculate(){
-
+      let currentCalculation  = this.get('calculations.currentCalculation');
+      let pastCalculations    = this.get('calculations.pastCalculations');
+      let result              = "";
+      try{
+        result = mathjs.eval(currentCalculation);
+      }catch(error){
+        return;
+      }
+      pastCalculations.unshift(`${currentCalculation} = ${result}`);
+      pastCalculations = pastCalculations.filter((calculation, index) => {return index < 10});
+      console.log(pastCalculations);
+      this.set('calculations.currentDisplay', result);
+      this.set('calculations.currentCalculation', '');
+      this.set('calculations.pastCalculations', pastCalculations);
     },
   }
 });
