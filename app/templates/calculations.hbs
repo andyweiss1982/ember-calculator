@@ -1,5 +1,5 @@
 <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-  <div class="panel panel-default">
+  <div class="panel panel-primary">
     <div class="panel-body">
       <div class="row">
         <div class="col-xs-12">
@@ -8,11 +8,17 @@
       </div>
       <div class="row">
         <div class="col-xs-3">
-          <button {{action "clearDisplay"}} class="btn btn-default btn-block btn-lg">AC</button>
+          <button {{action "clearDisplay"}} class="btn btn-danger btn-block btn-lg">AC</button>
         </div>
-        <div class="col-xs-3"><button class="btn btn-default btn-block btn-lg">**</button></div>
-        <div class="col-xs-3"><button class="btn btn-default btn-block btn-lg">sqrt</button></div>
-        <div class="col-xs-3"><button class="btn btn-default btn-block btn-lg">+/-</button></div>
+        <div class="col-xs-3">
+          <button {{action "handleOperationPress" "^"}} class="btn btn-warning btn-block btn-lg">**</button>
+        </div>
+        <div class="col-xs-3">
+          <button {{action "handleSqrtPress"}} class="btn btn-warning btn-block btn-lg">sqrt</button>
+        </div>
+        <div class="col-xs-3">
+          <button {{action "handleSignPress"}} class="btn btn-warning btn-block btn-lg">+/-</button>
+        </div>
         <div class="col-xs-3">
           <button {{action "handleNumPress" "7"}} class="btn btn-default btn-block btn-lg">7</button>
         </div>
@@ -22,7 +28,9 @@
         <div class="col-xs-3">
           <button {{action "handleNumPress" "9"}} class="btn btn-default btn-block btn-lg">9</button>
         </div>
-        <div class="col-xs-3"><button class="btn btn-default btn-block btn-lg">*</button></div>
+        <div class="col-xs-3">
+          <button {{action "handleOperationPress" "*"}} class="btn btn-warning btn-block btn-lg">*</button>
+        </div>
         <div class="col-xs-3">
           <button {{action "handleNumPress" "4"}} class="btn btn-default btn-block btn-lg">4</button>
         </div>
@@ -32,7 +40,9 @@
         <div class="col-xs-3">
           <button {{action "handleNumPress" "6"}} class="btn btn-default btn-block btn-lg">6</button>
         </div>
-        <div class="col-xs-3"><button class="btn btn-default btn-block btn-lg">/</button></div>
+        <div class="col-xs-3">
+          <button {{action "handleOperationPress" "/"}} class="btn btn-warning btn-block btn-lg">/</button>
+        </div>
         <div class="col-xs-3">
           <button {{action "handleNumPress" "1"}} class="btn btn-default btn-block btn-lg">1</button>
         </div>
@@ -42,16 +52,38 @@
         <div class="col-xs-3">
           <button {{action "handleNumPress" "3"}} class="btn btn-default btn-block btn-lg">3</button>
         </div>
-        <div class="col-xs-3"><button class="btn btn-default btn-block btn-lg">+</button></div>
+        <div class="col-xs-3">
+          <button {{action "handleOperationPress" "+"}} class="btn btn-warning btn-block btn-lg">+</button>
+        </div>
         <div class="col-xs-6">
-          <button {{action "handleNumPress" "0"}}class="btn btn-default btn-block btn-lg">0</button>
+          <button {{action "handleNumPress" "0"}} class="btn btn-default btn-block btn-lg">0</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleNumPress" "."}}class="btn btn-default btn-block btn-lg">.</button>
+          <button {{action "handleNumPress" "."}} class="btn btn-default btn-block btn-lg">.</button>
         </div>
-        <div class="col-xs-3"><button class="btn btn-default btn-block btn-lg">-</button></div>
-        <div class="col-xs-3 col-xs-offset-9"><button class="btn btn-default btn-block btn-lg btn-primary">=</button></div>
+        <div class="col-xs-3">
+          <button {{action "handleOperationPress" "-"}} class="btn btn-warning btn-block btn-lg">-</button>
+        </div>
+        <div class="col-xs-3 col-xs-offset-9">
+          <button {{action "calculate"}} class="btn btn-default btn-block btn-lg btn-primary">=</button>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-lg-8 col-xl-9">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h3>Current Expression</h3>
+      <input class="form-control" readonly value={{calculations.currentCalculation}}>
+      {{#if calculations.pastCalculations.length}}
+        <h4>Past Calculations</h4>
+        <ul>
+          {{#each of calculations.pastCalculations as |pastCalculation|}}
+            <li>{{pastCalculation}}</li>
+          {{/each}}
+        </ul>
+      {{/if}}
     </div>
   </div>
 </div>
