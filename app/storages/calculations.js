@@ -7,9 +7,10 @@ Storage.reopenClass({
   initialState() {
     return(
       {
-        currentDisplay:     "",
-        currentCalculation: "",
-        pastCalculations:   []
+        currentDisplay:       "0",
+        currentCalculation:   "0",
+        pastCalculations:     [],
+        justPressedOperation: false
       }
     );
   }
