@@ -77,9 +77,9 @@
       <h3>Current Calculation</h3>
       <input id= "current-calculation" class="form-control text-right input-lg" readonly value={{calculations.currentCalculation}}>
       <h3>Recent History</h3>
-      <ul>
+      <ul class="list-group">
         {{#each calculations.pastCalculations as |pastCalculation|}}
-          <li class="past-calculation">{{pastCalculation}}</li>
+          <li class="list-group-item past-calculation">{{pastCalculation}}</li>
         {{/each}}
       </ul>
     </div>
