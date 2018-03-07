@@ -3,69 +3,69 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-xs-12">
-          <input class="form-control text-right input-lg" readonly value={{calculations.currentDisplay}}>
+          <input id= "current-display" class="form-control text-right input-lg" readonly value={{calculations.currentDisplay}}>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-3">
-          <button {{action "clearDisplay"}} class="btn btn-danger btn-block btn-lg">AC</button>
+          <button {{action "clearDisplay"}} id="ac" class="btn btn-danger btn-block btn-lg">AC</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleOperationPress" "^"}} class="btn btn-warning btn-block btn-lg">**</button>
+          <button {{action "handleOperationPress" "^"}} id="exponent" class="btn btn-warning btn-block btn-lg">**</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleSqrtPress"}} class="btn btn-warning btn-block btn-lg">sqrt</button>
+          <button {{action "handleSqrtPress"}} id="sqrt" class="btn btn-warning btn-block btn-lg">sqrt</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleSignPress"}} class="btn btn-warning btn-block btn-lg">+/-</button>
+          <button {{action "handleSignPress"}} id="plus-minus" class="btn btn-warning btn-block btn-lg">+/-</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleNumPress" "7"}} class="btn btn-default btn-block btn-lg">7</button>
+          <button {{action "handleNumPress" "7"}} id="7" class="btn btn-default btn-block btn-lg">7</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleNumPress" "8"}} class="btn btn-default btn-block btn-lg">8</button>
+          <button {{action "handleNumPress" "8"}} id="8" class="btn btn-default btn-block btn-lg">8</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleNumPress" "9"}} class="btn btn-default btn-block btn-lg">9</button>
+          <button {{action "handleNumPress" "9"}} id="9" class="btn btn-default btn-block btn-lg">9</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleOperationPress" "*"}} class="btn btn-warning btn-block btn-lg">*</button>
+          <button {{action "handleOperationPress" "*"}} id="multiply" class="btn btn-warning btn-block btn-lg">*</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleNumPress" "4"}} class="btn btn-default btn-block btn-lg">4</button>
+          <button {{action "handleNumPress" "4"}} id="4" class="btn btn-default btn-block btn-lg">4</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleNumPress" "5"}} class="btn btn-default btn-block btn-lg">5</button>
+          <button {{action "handleNumPress" "5"}} id="5" class="btn btn-default btn-block btn-lg">5</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleNumPress" "6"}} class="btn btn-default btn-block btn-lg">6</button>
+          <button {{action "handleNumPress" "6"}} id="6" class="btn btn-default btn-block btn-lg">6</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleOperationPress" "/"}} class="btn btn-warning btn-block btn-lg">/</button>
+          <button {{action "handleOperationPress" "/"}} id="divide" class="btn btn-warning btn-block btn-lg">/</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleNumPress" "1"}} class="btn btn-default btn-block btn-lg">1</button>
+          <button {{action "handleNumPress" "1"}} id="1" class="btn btn-default btn-block btn-lg">1</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleNumPress" "2"}} class="btn btn-default btn-block btn-lg">2</button>
+          <button {{action "handleNumPress" "2"}} id="2" class="btn btn-default btn-block btn-lg">2</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleNumPress" "3"}} class="btn btn-default btn-block btn-lg">3</button>
+          <button {{action "handleNumPress" "3"}} id="3" class="btn btn-default btn-block btn-lg">3</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleOperationPress" "+"}} class="btn btn-warning btn-block btn-lg">+</button>
+          <button {{action "handleOperationPress" "+"}} id="add" class="btn btn-warning btn-block btn-lg">+</button>
         </div>
         <div class="col-xs-6">
-          <button {{action "handleNumPress" "0"}} class="btn btn-default btn-block btn-lg">0</button>
+          <button {{action "handleNumPress" "0"}} id="0" class="btn btn-default btn-block btn-lg">0</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleNumPress" "."}} class="btn btn-default btn-block btn-lg">.</button>
+          <button {{action "handleNumPress" "."}} id="decimal" class="btn btn-default btn-block btn-lg">.</button>
         </div>
         <div class="col-xs-3">
-          <button {{action "handleOperationPress" "-"}} class="btn btn-warning btn-block btn-lg">-</button>
+          <button {{action "handleOperationPress" "-"}} id="minus" class="btn btn-warning btn-block btn-lg">-</button>
         </div>
         <div class="col-xs-3 col-xs-offset-9">
-          <button {{action "calculate"}} class="btn btn-default btn-block btn-lg btn-primary">=</button>
+          <button {{action "calculate"}} id="equals" class="btn btn-default btn-block btn-lg btn-primary">=</button>
         </div>
       </div>
     </div>
@@ -75,11 +75,11 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <h3>Current Calculation</h3>
-      <input class="form-control text-right input-lg" readonly value={{calculations.currentCalculation}}>
+      <input id= "current-calculation" class="form-control text-right input-lg" readonly value={{calculations.currentCalculation}}>
       <h3>Recent History</h3>
       <ul>
         {{#each calculations.pastCalculations as |pastCalculation|}}
-          <li>{{pastCalculation}}</li>
+          <li class="past-calculation">{{pastCalculation}}</li>
         {{/each}}
       </ul>
     </div>
