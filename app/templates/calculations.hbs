@@ -3,7 +3,12 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-xs-12">
-          <input id= "current-display" class="form-control text-right input-lg" readonly value={{calculations.currentDisplay}}>
+          <input
+            id="current-display"
+            class="form-control text-right input-lg"
+            value={{calculations.currentDisplay}}
+            readonly
+          >
         </div>
       </div>
       <div class="row">
@@ -75,7 +80,12 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <h3>Current Calculation</h3>
-      <input id= "current-calculation" class="form-control text-right input-lg" readonly value={{calculations.currentCalculation}}>
+      <input
+        id="current-calculation"
+        class="form-control text-right input-lg"
+        value={{calculations.currentCalculation}}
+        readonly
+      >
       <h3>Recent History</h3>
       <ul class="list-group">
         {{#each calculations.pastCalculations as |pastCalculation|}}
