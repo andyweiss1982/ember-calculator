@@ -101,7 +101,6 @@ export default Controller.extend({
         return;
       }
       this.set('calculations.currentDisplay', result);
-      this.set('calculations.justPressedOperation', true)
     },
     clearDisplay(){
       this.set('calculations.currentDisplay', '0');
