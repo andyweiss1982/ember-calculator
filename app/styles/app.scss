@@ -12,6 +12,11 @@ button {
   outline: none;
 }
 
+.operation:focus {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
 .form-control:focus{
   border-color: #cccccc;
   -webkit-box-shadow: none;
