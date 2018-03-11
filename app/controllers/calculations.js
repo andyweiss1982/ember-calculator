@@ -43,7 +43,7 @@ export default Controller.extend({
     handleSignPress(){
       let   currentDisplay      = this.get('calculations.currentDisplay');
       let   currentCalculation  = this.get('calculations.currentCalculation');
-      const isDisplayingZero    = currentDisplay === "0" || /^0.0*$/.test(currentDisplay);
+      const isDisplayingZero    = ["0", ""].includes(currentDisplay) || /^0.0*$/.test(currentDisplay);
       const isNegativeNumber    = currentDisplay.indexOf("-") === 0
       const isLastCharacterNumber = !operators.includes(currentCalculation.slice(-1))
       const calcWithoutLastNumber = currentCalculation.split(" ").slice(0, -1).join(" ")
